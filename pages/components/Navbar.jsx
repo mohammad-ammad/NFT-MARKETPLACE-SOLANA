@@ -3,6 +3,7 @@ import Button from './Button'
 import { CgMenuRight } from 'react-icons/cg'
 import { HiX } from 'react-icons/hi'
 import { Transition } from '@windmill/react-ui'
+import Link from 'next/link'
 
 const Navbar = () => {
     //----USESTATE
@@ -15,10 +16,10 @@ const Navbar = () => {
                 </div>
                 <div>
                     <ul className='flex justify-start items-center'>
-                        <li><a href="" className='text-white mx-2'>Home</a></li>
-                        <li><a href="" className='text-white mx-2'>Shop</a></li>
+                        <li><Link href="/"><a className='text-white mx-2'>Home</a></Link></li>
+                        <li><Link href="/shop"><a className='text-white mx-2'>Shop</a></Link></li>
                         <li><a href="" className='text-white mx-2'>The Bridge</a></li>
-                        <li><a href="" className='text-white ml-2 mr-4'>Cart</a></li>
+                        <li><Link href="/cart"><a className='text-white ml-2 mr-4'>Cart</a></Link></li>
                         <li><Button btnText="Connect Wallet" width="w-36" px="px-3" py="py-2" /></li>
                     </ul>
                 </div>

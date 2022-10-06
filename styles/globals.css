@@ -12,3 +12,8 @@ body
     color: #ffffff;
     background: #6960EC;
 }
+
+.default-nav
+{
+    margin: 0px 40px !important;
+}
