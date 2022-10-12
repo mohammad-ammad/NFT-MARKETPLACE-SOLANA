@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Button = ({btnText,width,txtSize,px,py}) => {
+const Button = ({btnText,width,txtSize,px,py,connect}) => {
   return (
-    <button className={`bg-[#6960EC] text-white ${width} ${txtSize} ${px} ${py} rounded-md`}>{btnText}</button>
+    <button onClick={()=>connect()} className={`bg-[#6960EC] text-white ${width} ${txtSize} ${px} ${py} rounded-md`}>{btnText}</button>
   )
 }
 

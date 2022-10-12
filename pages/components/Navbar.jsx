@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from './Button'
 import { CgMenuRight } from 'react-icons/cg'
 import { HiX } from 'react-icons/hi'
 import { Transition } from '@windmill/react-ui'
 import Link from 'next/link'
+import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
     //----USESTATE
     const [toggle, setToggle] = useState(false);
+    //---USECONTEXT
+    const {connect} = useContext(AuthContext)
     return (
         <>
             <div className='hidden md:flex justify-between items-center bg-black py-4 px-14 w-full fixed z-50 top-0 left-1/2 transform -translate-x-1/2'>
@@ -20,7 +23,7 @@ const Navbar = () => {
                         <li><Link href="/shop"><a className='text-white mx-2'>Shop</a></Link></li>
                         <li><a href="" className='text-white mx-2'>The Bridge</a></li>
                         <li><Link href="/cart"><a className='text-white ml-2 mr-4'>Cart</a></Link></li>
-                        <li><Button btnText="Connect Wallet" width="w-36" px="px-3" py="py-2" /></li>
+                        <li><Button btnText="Connect Wallet" width="w-36" px="px-3" py="py-2" connect={connect} /></li>
                     </ul>
                 </div>
             </div>
